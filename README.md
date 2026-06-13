@@ -113,8 +113,6 @@ El notebook quedó preparado para ejecutarse en Python 3.12 con las siguientes m
 - Las celdas de TensorFlow/Keras configuran `TF_ENABLE_ONEDNN_OPTS=0` antes de importar TensorFlow. Esto ayuda a evitar inicializaciones lentas o conflictos de `oneDNN` en Windows.
 - La celda de generación de texto importa `torch` explícitamente y limpia la caché interna de `transformers` cuando el notebook ya había cargado la librería antes de instalar PyTorch.
 - El modelo de lenguaje usado por defecto es `sshleifer/tiny-gpt2`, que es pequeño y útil para pruebas educativas.
-- `poseidon.png` se carga directamente desde la carpeta del proyecto y, si no existe en Colab, se permite subirlo manualmente.
-- Los textos del notebook y del README fueron revisados para conservar correctamente tildes como `á`, `é`, `í`, `ó`, `ú`, `ñ` y signos especiales como `²`.
 
 ## Requisitos
 
