@@ -1,124 +1,92 @@
 # Fundamentos de IA - Alura
 
-Proyecto educativo en formato Jupyter Notebook para practicar conceptos base de inteligencia artificial, aprendizaje automático, procesamiento de imágenes y generación de texto.
+Proyecto educativo en formato Jupyter Notebook para practicar conceptos básicos de inteligencia artificial, aprendizaje automático, procesamiento de imágenes y procesamiento de lenguaje natural.
 
-El archivo principal es `Fundamentos_IA.ipynb`. El notebook fue revisado y documentado para que cada bloque de código tenga comentarios más claros, explicaciones del objetivo de cada ejercicio y validaciones sencillas cuando se trabaja con la imagen `poseidon.png`.
+El archivo principal es `Fundamentos_IA.ipynb`. El notebook contiene ejemplos comentados paso a paso para entender cómo se cargan datos, se entrenan modelos, se evalúan resultados y se visualizan predicciones.
 
 ## Archivos del proyecto
 
 - `Fundamentos_IA.ipynb`: notebook principal con todos los ejercicios.
-- `poseidon.png`: imagen usada en la sección de procesamiento de imágenes y predicción con MobileNetV2.
+- `poseidon.png`: imagen usada en la sección de procesamiento de imágenes.
+- `.gitignore`: evita subir archivos innecesarios como el entorno virtual `.venv`.
 - `README.md`: documentación general del proyecto.
 
-## Contenido trabajado
+## Contenido del notebook
 
 ### Clase 1: Aprendizaje supervisado
 
-Se trabajan problemas donde el modelo aprende usando ejemplos con respuestas conocidas.
+En esta sección se trabajan modelos que aprenden a partir de datos con respuestas conocidas.
 
-Temas incluidos:
+Temas principales:
 
 - Clasificación con el dataset Iris.
-- Entrenamiento de un `DecisionTreeClassifier`.
+- Entrenamiento de un árbol de decisión.
 - Comparación entre árbol de decisión y KNN.
-- Normalización de variables con `StandardScaler`.
-- Separación de datos en entrenamiento y prueba.
-- Evaluación con exactitud.
-
-También se incluye un ejemplo de regresión lineal:
-
-- Creación de datos simulados de inmuebles.
-- Predicción de precios a partir del tamaño.
-- Interpretación de coeficiente e intercepto.
-- Evaluación con R2, MAE y RMSE.
-- Validación cruzada.
+- Normalización de datos con `StandardScaler`.
+- Separación entre datos de entrenamiento y prueba.
+- Evaluación de modelos con exactitud.
+- Regresión lineal con datos simulados de inmuebles.
+- Evaluación de regresión con R2, MAE y RMSE.
 - Visualización de la recta de regresión.
 
-### Clase 2: Modelos de clasificación y regresión
+### Clase 2: Clasificación, regresión y optimización
 
-Se practican flujos completos de machine learning con datasets reales de `scikit-learn`.
+En esta clase se usan datasets de `scikit-learn` para practicar flujos completos de machine learning.
 
-Temas incluidos:
+Temas principales:
 
-- Carga del dataset California Housing.
-- Regresión lineal para predecir precios de viviendas.
-- Visualización de valores reales contra valores predichos.
-- Clasificación binaria usando el dataset Diabetes.
-- Matriz de confusión para analizar aciertos y errores.
+- Dataset California Housing.
+- Regresión lineal para estimar precios de viviendas.
+- Comparación entre valores reales y predichos.
+- Clasificación binaria con el dataset Diabetes.
+- Matriz de confusión.
 - Optimización de hiperparámetros con `GridSearchCV`.
-- Uso de `RandomForestRegressor` para medir importancia de atributos.
-- Comparación entre `RandomForestRegressor` y `GradientBoostingRegressor`.
+- Importancia de atributos con `RandomForestRegressor`.
+- Comparación entre Random Forest y Gradient Boosting.
 
 ### Clase 3: Aprendizaje no supervisado
 
-Se revisan modelos que buscan patrones sin usar etiquetas de respuesta.
+En esta sección se trabajan modelos que buscan patrones sin recibir etiquetas como respuesta.
 
-Temas incluidos:
+Temas principales:
 
 - Agrupamiento con K-Means.
 - Clustering jerárquico.
-- Dendrogramas para visualizar uniones entre grupos.
-- Normalización de datos antes del clustering.
+- Dendrogramas.
+- Normalización antes del clustering.
 - Reducción de dimensionalidad con PCA.
-- Visualización de datos Iris en dos componentes principales.
+- Visualización del dataset Iris usando dos componentes principales.
 - Interpretación de la varianza explicada por PCA.
 
-### Clase 4: Procesamiento de imágenes y modelos preentrenados
+### Clase 4: Procesamiento de imágenes
 
-Se trabaja con la imagen `poseidon.png` para entender cómo una imagen puede representarse como datos numéricos.
+Esta sección usa la imagen `poseidon.png` para mostrar cómo una imagen puede convertirse en datos numéricos y cómo puede ser analizada por modelos de visión por computadora.
 
-Temas incluidos:
+Temas principales:
 
 - Lectura de imágenes con OpenCV.
 - Conversión a escala de grises.
 - Visualización de intensidades de píxeles.
-- Ejemplo de arquitectura CNN con Keras.
+- Creación de una arquitectura CNN básica con Keras.
 - Uso de MobileNetV2 preentrenado con ImageNet.
-- Preprocesamiento de imágenes para modelos de visión.
 - Predicción de las 3 clases más probables para `poseidon.png`.
 
 ### Procesamiento de lenguaje natural
 
-El notebook también incluye ejemplos básicos de texto:
+El notebook también incluye ejemplos introductorios de NLP.
+
+Temas principales:
 
 - Bag of Words con `CountVectorizer`.
-- Conversión de frases en matriz numérica.
+- Conversión de frases a matrices numéricas.
 - Generación de texto con `transformers.pipeline`.
-- Parámetros básicos de generación como `temperature`, `top_p`, `top_k` y `repetition_penalty`.
-
-## Mejoras realizadas
-
-Se mejoró el notebook para que sea más fácil de estudiar y reutilizar:
-
-- Se agregaron explicaciones por sección.
-- Se ampliaron comentarios dentro del código.
-- Se corrigieron textos mezclados entre español y portugués.
-- Se aclaró la función de cada modelo y cada métrica.
-- Se agregó `random_state` en modelos para resultados reproducibles.
-- Se usó `stratify` en divisiones de clasificación para conservar proporciones de clases.
-- Se corrigió `plt.show()` donde faltaba ejecutar la función.
-- Se ordenó la visualización de gráficos con `plt.tight_layout()`.
-- Se adaptó el procesamiento de imágenes para usar directamente `poseidon.png`.
-- Se agregó respaldo para subir la imagen manualmente si el notebook se ejecuta en Google Colab.
-- Se añadieron mensajes de error claros cuando falta la imagen o no puede leerse.
-- Se agregó configuración para TensorFlow en Windows con `TF_ENABLE_ONEDNN_OPTS=0`.
-- Se ajustó la celda de `transformers` para detectar correctamente PyTorch en notebooks.
-- Se cambió el modelo de texto a `sshleifer/tiny-gpt2` para que la demostración sea más liviana.
-- Se revisó el notebook para evitar problemas de codificación en tildes y caracteres especiales.
-
-## Estado actual del notebook
-
-El notebook quedó preparado para ejecutarse en Python 3.12 con las siguientes mejoras prácticas:
-
-- Las celdas de TensorFlow/Keras configuran `TF_ENABLE_ONEDNN_OPTS=0` antes de importar TensorFlow. Esto ayuda a evitar inicializaciones lentas o conflictos de `oneDNN` en Windows.
-- La celda de generación de texto importa `torch` explícitamente y limpia la caché interna de `transformers` cuando el notebook ya había cargado la librería antes de instalar PyTorch.
-- El modelo de lenguaje usado por defecto es `sshleifer/tiny-gpt2`, que es pequeño y útil para pruebas educativas.
+- Uso del modelo `sshleifer/tiny-gpt2` para una demostración liviana.
 
 ## Requisitos
 
-Para ejecutar todo el notebook se recomienda usar Python 3.10 o superior.
+Se recomienda usar Python 3.10 o superior.
 
-Bibliotecas principales:
+Instala las dependencias principales con:
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn scipy opencv-python tensorflow transformers torch
@@ -126,44 +94,18 @@ pip install numpy pandas matplotlib seaborn scikit-learn scipy opencv-python ten
 
 Notas:
 
-- Algunas celdas descargan datasets desde `scikit-learn`.
-- La celda de MobileNetV2 puede descargar pesos preentrenados de ImageNet la primera vez que se ejecuta.
-- La celda de `transformers` usa PyTorch (`torch`) y puede descargar el modelo `sshleifer/tiny-gpt2` si no está guardado en caché.
-- Puedes cambiar `model_id = "sshleifer/tiny-gpt2"` por `model_id = "gpt2"` si quieres probar el modelo GPT-2 completo.
-- Si se ejecuta en Google Colab, normalmente varias dependencias ya están instaladas.
+- Algunas celdas pueden descargar datasets de `scikit-learn`.
+- La celda de MobileNetV2 puede descargar pesos preentrenados la primera vez que se ejecuta.
+- La celda de generación de texto puede descargar `sshleifer/tiny-gpt2` la primera vez que se ejecuta.
+- Si ejecutas el notebook en Google Colab, varias dependencias ya pueden estar instaladas.
 
-## Solución de errores comunes
-
-### TensorFlow no importa correctamente
-
-Si aparece un error relacionado con TensorFlow, reinicia el kernel y vuelve a ejecutar la celda. El notebook ya incluye esta configuración antes de importar TensorFlow:
-
-```python
-import os
-os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
-```
-
-### `transformers` no detecta PyTorch
-
-Si aparece un error como `PyTorch should be installed` o `name 'torch' is not defined`, asegúrate de tener instalado `torch` y reinicia el kernel de Jupyter. En VS Code puedes hacerlo desde:
-
-```text
-Ctrl+Shift+P -> Jupyter: Restart Kernel
-```
-
-Después ejecuta nuevamente la celda completa de generación de texto.
-
-### La imagen `poseidon.png` no se encuentra
-
-Verifica que `poseidon.png` esté en la misma carpeta que `Fundamentos_IA.ipynb`. Si ejecutas el notebook en Colab, sube la imagen cuando la celda lo solicite.
-
-## Cómo ejecutar
+## Cómo ejecutar el proyecto
 
 ### Opción 1: Jupyter local
 
 1. Abre una terminal en la carpeta del proyecto.
-2. Instala las dependencias necesarias.
-3. Ejecuta Jupyter:
+2. Instala las dependencias.
+3. Inicia Jupyter:
 
 ```bash
 jupyter notebook
@@ -172,10 +114,23 @@ jupyter notebook
 4. Abre `Fundamentos_IA.ipynb`.
 5. Ejecuta las celdas en orden.
 
-### Opción 2: Google Colab
+### Opción 2: Visual Studio Code
+
+1. Abre la carpeta del proyecto en VS Code.
+2. Abre `Fundamentos_IA.ipynb`.
+3. Selecciona un kernel de Python con las dependencias instaladas.
+4. Ejecuta las celdas en orden.
+
+Si instalaste dependencias mientras el notebook estaba abierto, reinicia el kernel antes de ejecutar nuevamente:
+
+```text
+Ctrl+Shift+P -> Jupyter: Restart Kernel
+```
+
+### Opción 3: Google Colab
 
 1. Sube `Fundamentos_IA.ipynb` a Google Colab.
-2. Sube también `poseidon.png` cuando llegues a las celdas de imagen, o déjalo disponible en la misma carpeta del notebook.
+2. Sube también `poseidon.png` cuando trabajes con las celdas de imagen.
 3. Ejecuta las celdas en orden.
 
 ## Imagen usada
@@ -186,12 +141,17 @@ La imagen principal del proyecto es:
 poseidon.png
 ```
 
-Esta imagen se utiliza para:
+Se usa para:
 
-- Convertir una imagen a escala de grises.
-- Mostrar una muestra de valores de píxeles.
-- Probar una predicción con MobileNetV2.
+- Mostrar una imagen en escala de grises.
+- Revisar valores de píxeles.
+- Probar predicciones con MobileNetV2.
+
+## Buenas prácticas del repositorio
+
+El proyecto incluye `.gitignore` para evitar subir archivos generados automáticamente o dependientes de la máquina local.
 
 ## Objetivo del proyecto
 
-El objetivo es tener una guía práctica y comentada de fundamentos de IA. El notebook funciona como material de estudio porque muestra el ciclo completo de varios ejercicios: cargar datos, preparar entradas, entrenar modelos, evaluar resultados y visualizar lo aprendido.
+El objetivo es tener una guía práctica de fundamentos de IA con ejemplos simples y ejecutables. El notebook sirve como material de estudio para comprender el flujo básico de un proyecto de machine learning: preparar datos, entrenar modelos, evaluar resultados y visualizar conclusiones.
+
